@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="1200" height="720" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#34d399"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#bgGrad)" rx="16"/>
+
+  <!-- Title -->
+  <text x="600" y="42" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="700">MediCare — Spring Boot &amp; Spring Cloud Microservices Architecture</text>
+  <text x="600" y="66" text-anchor="middle" fill="#94a3b8" font-size="13">17 Microservices • Eureka Discovery • API Gateway • Apache Kafka • Keycloak OIDC • Stripe • Gemini AI</text>
+
+  <!-- Client Layer -->
+  <rect x="40" y="105" width="180" height="90" rx="12" fill="#1e3a8a" stroke="#60a5fa" stroke-width="1.8"/>
+  <text x="130" y="138" text-anchor="middle" fill="#eff6ff" font-size="14" font-weight="700">Next.js Frontend</text>
+  <text x="130" y="158" text-anchor="middle" fill="#bfdbfe" font-size="11">REST • GraphQL • STOMP WS</text>
+  <text x="130" y="176" text-anchor="middle" fill="#93c5fd" font-size="11">Port :3000</text>
+
+  <!-- API Gateway -->
+  <rect x="275" y="105" width="210" height="90" rx="12" fill="#065f46" stroke="#34d399" stroke-width="1.8"/>
+  <text x="380" y="135" text-anchor="middle" fill="#ecfdf5" font-size="15" font-weight="700">API Gateway</text>
+  <text x="380" y="155" text-anchor="middle" fill="#a7f3d0" font-size="11">gateway-service (:8080)</text>
+  <text x="380" y="173" text-anchor="middle" fill="#6ee7b7" font-size="11">WebFlux Routing • OAuth2 JWT</text>
+
+  <!-- Eureka & Config -->
+  <rect x="545" y="95" width="210" height="52" rx="10" fill="#312e81" stroke="#818cf8" stroke-width="1.5"/>
+  <text x="650" y="118" text-anchor="middle" fill="#eef2ff" font-size="13" font-weight="700">Eureka Discovery (:8761)</text>
+  <text x="650" y="135" text-anchor="middle" fill="#c7d2fe" font-size="11">discovery-service</text>
+
+  <rect x="785" y="95" width="210" height="52" rx="10" fill="#312e81" stroke="#818cf8" stroke-width="1.5"/>
+  <text x="890" y="118" text-anchor="middle" fill="#eef2ff" font-size="13" font-weight="700">Config Server (:8888)</text>
+  <text x="890" y="135" text-anchor="middle" fill="#c7d2fe" font-size="11">configuration-service</text>
+
+  <!-- Keycloak OIDC -->
+  <rect x="275" y="230" width="210" height="64" rx="10" fill="#701a75" stroke="#e879f9" stroke-width="1.5"/>
+  <text x="380" y="257" text-anchor="middle" fill="#fdf4ff" font-size="13" font-weight="700">Keycloak OIDC (:8180)</text>
+  <text x="380" y="276" text-anchor="middle" fill="#f5d0fe" font-size="11">RBAC • JWT Issuer • Realm Admin</text>
+
+  <!-- Arrows Client -> Gateway -> Eureka / Keycloak -->
+  <line x1="220" y1="150" x2="270" y2="150" stroke="#34d399" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <line x1="380" y1="195" x2="380" y2="225" stroke="#94a3b8" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+  <line x1="485" y1="130" x2="540" y2="122" stroke="#94a3b8" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- 14 Domain/Clinical/Business Microservices Container -->
+  <rect x="530" y="175" width="630" height="330" rx="14" fill="#0f172a" stroke="#475569" stroke-width="1.5"/>
+  <text x="550" y="200" fill="#cbd5e1" font-size="13" font-weight="700">Domain, Clinical, Billing &amp; AI Microservices (Registered with Eureka)</text>
+
+  <!-- Group 1: Core Domain -->
+  <rect x="550" y="218" width="185" height="128" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2"/>
+  <text x="642" y="238" text-anchor="middle" fill="#38bdf8" font-size="12" font-weight="700">Core Domain</text>
+  <text x="564" y="260" fill="#e2e8f0" font-size="11">• patient-service (:8081)</text>
+  <text x="564" y="280" fill="#e2e8f0" font-size="11">• appointment-service (:8082)</text>
+  <text x="564" y="300" fill="#e2e8f0" font-size="11">• user-service (:8085)</text>
+  <text x="564" y="320" fill="#e2e8f0" font-size="11">• clinic-service (:8086)</text>
+  <text x="564" y="338" fill="#e2e8f0" font-size="11">• queue-service (:8094)</text>
+
+  <!-- Group 2: Clinical -->
+  <rect x="752" y="218" width="190" height="128" rx="10" fill="#1e293b" stroke="#34d399" stroke-width="1.2"/>
+  <text x="847" y="238" text-anchor="middle" fill="#34d399" font-size="12" font-weight="700">Clinical Services</text>
+  <text x="766" y="264" fill="#e2e8f0" font-size="11">• consultation-service (:8088)</text>
+  <text x="780" y="280" fill="#94a3b8" font-size="10">(REST + GraphQL)</text>
+  <text x="766" y="300" fill="#e2e8f0" font-size="11">• medical-record (:8089)</text>
+  <text x="766" y="320" fill="#e2e8f0" font-size="11">• medication-service (:8090)</text>
+  <text x="766" y="338" fill="#e2e8f0" font-size="11">• prescription-service (:8093)</text>
+
+  <!-- Group 3: Billing, Comms & AI -->
+  <rect x="960" y="218" width="182" height="128" rx="10" fill="#1e293b" stroke="#fbbf24" stroke-width="1.2"/>
+  <text x="1051" y="238" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="700">Billing, Comms &amp; AI</text>
+  <text x="972" y="260" fill="#e2e8f0" font-size="11">• billing-service (:8087)</text>
+  <text x="972" y="280" fill="#e2e8f0" font-size="11">• payment-service (:8092)</text>
+  <text x="972" y="300" fill="#e2e8f0" font-size="11">• notification-service (:8091)</text>
+  <text x="972" y="320" fill="#e2e8f0" font-size="11">• analytics-service (:8095)</text>
+  <text x="972" y="338" fill="#e2e8f0" font-size="11">• chatbot-service (:8096)</text>
+
+  <!-- Gateway -> Microservices -->
+  <line x1="485" y1="168" x2="530" y2="250" stroke="#34d399" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- Messaging & Persistence Row inside / below -->
+  <rect x="550" y="370" width="285" height="115" rx="10" fill="#172554" stroke="#60a5fa" stroke-width="1.4"/>
+  <text x="692" y="396" text-anchor="middle" fill="#eff6ff" font-size="14" font-weight="700">PostgreSQL 16 (:5432)</text>
+  <text x="692" y="418" text-anchor="middle" fill="#bfdbfe" font-size="11">Database-per-Service Isolation</text>
+  <text x="692" y="438" text-anchor="middle" fill="#93c5fd" font-size="11">14 dedicated DBs &amp; roles</text>
+  <text x="692" y="458" text-anchor="middle" fill="#93c5fd" font-size="10">initdb/001-create-databases.sh</text>
+
+  <rect x="855" y="370" width="287" height="115" rx="10" fill="#3f2c16" stroke="#f59e0b" stroke-width="1.4"/>
+  <text x="998" y="396" text-anchor="middle" fill="#fffbeb" font-size="14" font-weight="700">Apache Kafka KRaft (:9092)</text>
+  <text x="998" y="418" text-anchor="middle" fill="#fde68a" font-size="11">Event-Driven Streaming</text>
+  <text x="998" y="438" text-anchor="middle" fill="#fcd34d" font-size="11">Topic: consultation-completed</text>
+  <text x="998" y="458" text-anchor="middle" fill="#fcd34d" font-size="10">Patient, Billing &amp; Analytics Events</text>
+
+  <!-- External Integrations -->
+  <rect x="530" y="540" width="300" height="82" rx="12" fill="#1e1b4b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="680" y="570" text-anchor="middle" fill="#f5f3ff" font-size="14" font-weight="700">Stripe Checkout &amp; Webhooks</text>
+  <text x="680" y="592" text-anchor="middle" fill="#ddd6fe" font-size="11">Subscriptions • Invoices • Signature Verification</text>
+
+  <rect x="860" y="540" width="300" height="82" rx="12" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+  <text x="1010" y="570" text-anchor="middle" fill="#ecfdf5" font-size="14" font-weight="700">Google Gemini (Spring AI)</text>
+  <text x="1010" y="592" text-anchor="middle" fill="#a7f3d0" font-size="11">AI Medical Assistant in chatbot-service</text>
+
+  <!-- WebSocket Box -->
+  <rect x="40" y="330" width="445" height="90" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="262" y="362" text-anchor="middle" fill="#f0f9ff" font-size="14" font-weight="700">Real-Time STOMP WebSocket Push</text>
+  <text x="262" y="384" text-anchor="middle" fill="#bae6fd" font-size="11">notification-service → /topic/doctor/{userId}/notifications</text>
+  <text x="262" y="402" text-anchor="middle" fill="#7dd3fc" font-size="11">Queue updates, patient arrival &amp; billing-ready alerts</text>
+
+  <line x1="130" y1="330" x2="130" y2="200" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="5 3" marker-end="url(#arrow)"/>
+
+  <!-- CI/CD Footer -->
+  <rect x="40" y="540" width="445" height="82" rx="12" fill="#1e293b" stroke="#64748b" stroke-width="1.4"/>
+  <text x="262" y="570" text-anchor="middle" fill="#f1f5f9" font-size="14" font-weight="700">CI/CD &amp; Quality Gates</text>
+  <text x="262" y="592" text-anchor="middle" fill="#cbd5e1" font-size="11">GitHub Actions (mvn test) • Jenkinsfile • SonarQube • Docker Compose</text>
+
+  <!-- Watermark -->
+  <text x="1160" y="695" text-anchor="end" fill="#64748b" font-size="11">github.com/Majidied/MediCare-backend</text>
+</svg>
